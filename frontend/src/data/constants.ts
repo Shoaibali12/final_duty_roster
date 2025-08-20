@@ -29,6 +29,8 @@ export const blockOptions: OptionType[] = [
   { value: "Block-2", label: "Block-II" },
   { value: "Block-3", label: "Block-III" },
   { value: "Block-4", label: "Block-IV" },
+  { value: "Block-5", label: "Auditorium" },
+  { value: "Block-6", label: "Ground" },
 ];
 
 export const venueOptions: OptionType[] = [

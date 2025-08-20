@@ -5,6 +5,7 @@ import axios from "axios";
 import SectionInput from "./SectionsInput";
 import VenueSelector from "./VenueSelector";
 import SupportRoleInput from "./SupportRoleInput";
+import { useRouter } from "next/navigation";
 
 interface RoleEntry {
   role: string;
@@ -22,6 +23,7 @@ const VenueForm: React.FC<VenueFormProps> = ({ eventId }) => {
   const [sections, setSections] = useState<any[]>([]);
   const [supportRoles, setSupportRoles] = useState<RoleEntry[]>([]);
   const [submitting, setSubmitting] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,7 +61,7 @@ const VenueForm: React.FC<VenueFormProps> = ({ eventId }) => {
       );
       console.log("Success:", res.data);
       alert("Venue configuration saved successfully!");
-
+      router.push("/sampling");
       // Reset form
       setVenueName("");
       setBlock("");
